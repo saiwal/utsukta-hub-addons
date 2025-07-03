@@ -1,0 +1,7 @@
+version: 1
+url: $baseurl/signature
+name: Signature
+requires: local_channel
+photo: icon:pencil-square
+categories: nav_featured_app, Productivity
+desc: Adds a signature at the bottom of your posts

@@ -1,0 +1,16 @@
+[region=topnav]
+[widget=mynavbar][/widget]
+[/region]
+
+[region=aside]
+[widget=inbox_header][/widget]
+[/region]
+
+[region=content]
+$content
+[/region]
+
+[region=right_aside]
+[widget=fullprofile][/widget]
+[/region]
+

@@ -1,0 +1,7 @@
+version: 1
+url: $baseurl/mailbox
+name: Mailbox
+requires: local_channel
+photo: icon:envelope
+categories: nav_featured_app, Productivity
+desc: View posts in your inbox
