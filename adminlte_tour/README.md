@@ -4,6 +4,7 @@ This addon provides a guided tour to a new user introducing them to the interfac
 
 
 # Todo
+- Support for tours on mobile view.
 - Individual tours for various modules.
 - Tours for accomplishing specific goals such as making a post, creating privacy group, installing/removing an addon, etc.
 - Language support.
