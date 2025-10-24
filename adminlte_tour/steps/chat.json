@@ -1,0 +1,26 @@
+[
+  {
+    "title": "The Chat Module",
+    "text": "This module shows your network stream.",
+    "buttons": [
+        { "text": "Next", "action": "next" }
+      ]
+    },
+    {
+      "title": "The sidebar",
+      "text": "The sidebar shows your some quick access links for your apps.",
+      "attachTo": { "element": ".app-sidebar", "on": "right" },      
+      "buttons": [
+        {"text":"Back", "action": "back" },
+        {"text":"Next", "action": "next" }
+      ]
+    },
+    {
+      "title": "Messages Widget",
+      "text": "This widget shows you recent posts from your network, direct messages, starred posts(if enabled), saved folders(if enabled) and notification.",
+      "buttons": [
+        {"text":"Back", "action": "back" },
+        {"text":"Close", "action": "cancel" }
+      ]
+    }
+]
