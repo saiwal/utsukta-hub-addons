@@ -47,13 +47,4 @@ function adminlte_tour_inject(&$b) {
     $b .= "<script src='/addon/adminlte_tour/js/tour.js'></script>";
 }
 
-// Endpoint to mark tour as complete
-function adminlte_tour_complete() {
-    $uid = local_channel();
-    if (!$uid) killme();
 
-    set_pconfig($uid, 'adminlte', 'tour_done', 1);
-    header('Content-Type: application/json');
-    echo json_encode(['status' => 'ok']);
-    killme();
-}

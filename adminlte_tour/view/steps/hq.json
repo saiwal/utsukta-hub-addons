@@ -1,5 +1,4 @@
-{
-  "hq": [
+[
     {
       "title": "Welcome to HQ!",
       "text": "This is your default landing page.",
@@ -116,4 +115,4 @@
         {"text":"Close", "action": "cancel" }
       ]
     }
-  ]}
+ ]
