@@ -13,7 +13,7 @@ class Adminlte_tour extends \Zotlabs\Web\Controller {
         $tour = trim($_GET['tour'] ?? '');
 
         if ($tour) {
-            $path = 'addon/adminlte_tour/view/steps/' . basename($tour) . '.json';
+            $path = 'addon/adminlte_tour/steps/' . basename($tour) . '.json';
             if (file_exists($path)) {
                 header('Content-Type: application/json');
                 echo file_get_contents($path);
