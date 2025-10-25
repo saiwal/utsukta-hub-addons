@@ -10,6 +10,7 @@
       "title": "The sidebar",
       "text": "The sidebar shows your some quick access links for your apps.",
       "attachTo": { "element": ".app-sidebar", "on": "right" },      
+      "onShow": "expandSidebar",
       "buttons": [
         {"text":"Back", "action": "back" },
         {"text":"Next", "action": "next" }
@@ -55,6 +56,7 @@
       "title": "The Header",
       "text": "The header contains buttons for toggling the sidebar visibility, your current location, and other quick links.",
       "attachTo": { "element": ".app-header", "on": "bottom" },     
+      "onShow": "collapseSidebar",
       "buttons": [
         {"text":"Back", "action": "back" },
         {"text":"Next", "action": "next" }
@@ -110,6 +112,7 @@
       "title": "Messages Widget",
       "text": "This widget shows you recent posts from your network, direct messages, starred posts(if enabled), saved folders(if enabled) and notification.",
       "attachTo": { "element": "#messages-widget", "on": "left" },     
+      "onShow": "toggleOffcanvas",
       "buttons": [
         {"text":"Back", "action": "back" },
         {"text":"Close", "action": "cancel" }
