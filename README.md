@@ -10,8 +10,6 @@ Run the following in hubzilla folder on your webserver:
 ./util/add_addon_repo https://github.com/saiwal/Utsukta-hub-addons.git utsukta-addons
 ```
 
-or manually extract the release in `view/themes`
-
 ## Add-ons:
 
 ### AdminLTE Tour
