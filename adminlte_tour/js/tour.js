@@ -1,6 +1,9 @@
 function startTour(tourName) {
   if (typeof Shepherd === 'undefined') return;
 
+  const userLang = (typeof hubzillaLang !== 'undefined' && hubzillaLang)
+  ? hubzillaLang.split('-')[0]  // normalize (e.g., pt-br → pt)
+  : (navigator.language || 'en').split('-')[0];
   // Get current page/module name safely (first segment only)
   let page = typeof currentHubzillaPage !== 'undefined'
     ? currentHubzillaPage
@@ -12,19 +15,31 @@ function startTour(tourName) {
   // Allow explicit override (so you can call startTour('post'))
   if (tourName) page = tourName;
 
-  const stepsUrl = `/addon/adminlte_tour/steps/${page}.json`;
+  // Try localized JSON first, fallback to default
+  const localizedUrl = `/addon/adminlte_tour/steps/${page}.${userLang}.json`;
+  const defaultUrl   = `/addon/adminlte_tour/steps/${page}.json`;
 
-  fetch(stepsUrl)
+  console.log(`Loading tour for "${page}" (lang: ${userLang})`);
+
+  fetch(localizedUrl)
     .then(async res => {
       if (!res.ok) {
-        console.warn(`No tour found for page: ${page} (${res.status})`);
+        console.warn(`No ${userLang} tour found, falling back to default.`);
+        return fetch(defaultUrl);
+      }
+      return res;
+    })
+    .then(async res => {
+      if (!res.ok) {
+        console.warn(`No tour found for page: ${page}`);
         return null;
       }
+
       const text = await res.text();
       try {
         return JSON.parse(text);
       } catch (err) {
-        console.error(`Invalid JSON in ${stepsUrl}:`, err);
+        console.error(`Invalid JSON in ${res.url}:`, err);
         return null;
       }
     })
@@ -33,7 +48,6 @@ function startTour(tourName) {
         console.info(`No steps defined for page: ${page}`);
         return;
       }
-
       const tour = new Shepherd.Tour({
         useModalOverlay: true,
         defaultStepOptions: {

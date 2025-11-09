@@ -8,10 +8,12 @@ The default tour starts when a user visits /hq
 
 ![hq](./screenshots/hq.png)
 
-![sidebar](./screenshots/sidebar.png)
+![sindebar](./screenshots/sidebar.png)
+
+# Contributing language support
+The tour steps are defined within a json file in `steps` folder as `<module>.<lang>.json`. To add a tour for a language (e.g. de), simply copy the `hq.en.json` as `hq.de.json` and replace the text fields with the traslated strings. 
 
 # Todo
 - Individual tours for various modules.
 - Tours for accomplishing specific goals such as making a post, creating privacy group, installing/removing an addon, etc.
-- Language support.
 

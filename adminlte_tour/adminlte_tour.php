@@ -30,7 +30,6 @@ function adminlte_tour_inject(&$b) {
 
     // Check current theme
     $theme = App::$channel['channel_theme'];
-    logger('Current theme: ' . $theme);
     if (strpos($theme, 'adminlte') !== 0) {
       return; // exit if theme is not adminlte or a variant
     }
@@ -42,7 +41,9 @@ function adminlte_tour_inject(&$b) {
     head_add_css('/addon/adminlte_tour/css/tour.css');
 
     $current_page = App::$cmd; // e.g., 'hq', 'network', 'connections'
-    $b .= "<script>const currentHubzillaPage = '$current_page';</script>";
+    $lang = App::$language ?: 'en';
+
+    $b .= "<script>const currentHubzillaPage = '$current_page'; const hubzillaLang = '$lang';</script>";
     $b .= "<script src='/addon/adminlte_tour/js/shepherd.js'></script>";
     $b .= "<script src='/addon/adminlte_tour/js/tour.js'></script>";
 }
