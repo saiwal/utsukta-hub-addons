@@ -12,9 +12,4 @@ Run the following in hubzilla folder on your webserver:
 
 ## Add-ons:
 
-### AdminLTE Tour
-This add-on provides a welcome tour for new users to familiarize them with the interface. [AdminLTE](https://github.com/saiwal/Utsukta-hub-themes) theme needs to be installed and active to use this add-on.
 
-![hq](./adminlte_tour/screenshots/hq.png)
-
-![sidebar](./adminlte_tour/screenshots/sidebar.png)
